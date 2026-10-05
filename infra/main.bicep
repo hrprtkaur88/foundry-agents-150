@@ -75,6 +75,7 @@ module bingGrounding 'modules/bing-grounding.bicep' = {
   params: {
     bingName: 'bing-${resourceToken}'
     foundryName: foundry.outputs.accountName
+    foundryProjectName: foundry.outputs.projectName
     tags: tags
   }
 }
@@ -102,6 +103,7 @@ output AZURE_WEBAPP_URL string = appService.outputs.webAppUrl
 output AZURE_FOUNDRY_NAME string = foundry.outputs.accountName
 output AZURE_FOUNDRY_ENDPOINT string = foundry.outputs.accountEndpoint
 output AZURE_BING_NAME string = bingGrounding.outputs.bingName
+output AZURE_BING_CONNECTION_NAME string = bingGrounding.outputs.bingConnectionName
 output AZURE_AI_SEARCH_NAME string = deployAzureAiSearch ? azureAiSearch.outputs.searchServiceName : ''
 output AZURE_AI_SEARCH_ENDPOINT string = deployAzureAiSearch ? azureAiSearch.outputs.searchServiceEndpoint : ''
 output AZURE_AI_SEARCH_CONNECTION_NAME string = deployAzureAiSearch ? azureAiSearch.outputs.searchConnectionName : ''

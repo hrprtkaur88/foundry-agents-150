@@ -64,11 +64,11 @@ An explicit supersession statement controls only the subjects it covers. If auth
 
 The workshop uses **Grounding with Bing Search** to let the agent look things up on the public web.
 
-You do not need to create anything in Azure for this step. The `azd up` template already deployed the Bing resource (`infra/modules/bing-grounding.bicep`) and created the connection to it with `isSharedToAll: true`, which is why your project can already see it. You only attach the tool to the agent.
+You do not need to create anything in Azure for this step. The `azd up` template already deployed the Bing resource (`infra/modules/bing-grounding.bicep`) and created a project connection to it. You only attach the tool to the agent.
 
 1. Open **Build** > **Agents** > **Lightbulb-Agent**.
 2. In **Tools**, select **Add**, then choose **Grounding with Bing Search** from **Configured** or **Catalog**.
-3. Select the workshop Bing connection created by `azd up`. It is named `<foundry-resource-name>-bingsearchconnection`.
+3. Select the workshop Bing connection created by `azd up`. It is named `grounding-with-bing`.
 4. Check that no other web tool is turned on. You want exactly one route to the public web, so you can tell where an answer came from.
 5. Save the agent and start a new conversation.
 6. Test:
